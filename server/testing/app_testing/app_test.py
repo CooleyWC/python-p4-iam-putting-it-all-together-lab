@@ -342,7 +342,7 @@ class TestRecipeIndex:
             response_json = response.get_json()
             
             with client.session_transaction() as session:
-                
+                # breakpoint()
                 new_recipe = Recipe.query.filter(Recipe.user_id == session['user_id']).first()
 
             assert response_json['title'] == new_recipe.title
